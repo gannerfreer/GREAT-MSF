@@ -19,6 +19,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Windows")
     if (NOT DEFINED Third_GLFW_ROOT)
         set(Third_GLFW_ROOT       ${ROOT}/third-party/GLFW)
     endif()
+    include_directories(${Third_GLFW_ROOT}/include)
     # ==============================================================================
 else()
     # For linux
@@ -35,7 +36,6 @@ endif()
 
 # set include path
 include_directories(${Third_Eigen_ROOT})
-include_directories(${Third_GLFW_ROOT}/include)
 include_directories(${LibGnutSrc})
 include_directories(${LibGREATSrc})
 
@@ -102,6 +102,7 @@ if(CMAKE_SYSTEM_NAME MATCHES "Windows")
 	target_link_libraries(${PROJECT_NAME} ${Third_GLFW_ROOT}/lib/glfw3.lib opengl32.lib)
 else()
     link_directories(${BUILD_DIR}/Lib)
+    target_link_libraries(${PROJECT_NAME} glfw ${OPENGL_LIBRARIES})
 endif()
 # ==========================================================================================================================================
 target_link_libraries(${PROJECT_NAME}    ${LibGnut})

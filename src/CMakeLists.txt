@@ -125,9 +125,10 @@ else()
         set(Third_Eigen_ROOT       ${ROOT}/third-party/Eigen)
     endif()
 
-    if (NOT DEFINED Third_GLFW_ROOT)
-        set(Third_GLFW_ROOT       ${ROOT}/third-party/GLFW)
-    endif()
+    find_package(glfw3 REQUIRED)
+    message(STATUS "Using system GLFW: ${glfw3_DIR}")
+
+    find_package(OpenGL REQUIRED)
     # ==============================================================================
 endif()
 

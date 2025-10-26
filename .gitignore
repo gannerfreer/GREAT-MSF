@@ -1,5 +1,9 @@
 /src/build
 /src/build_Windows
+/src/build_Linux
 /build_Windows
 /build
+/build_Linux
 /.vs
+/.vscode
+/sample_data
