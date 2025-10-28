@@ -13,7 +13,7 @@ source_group("Soruce Files" FILES source_files)
 
 set(include_path
     ${Third_Eigen_ROOT}
-    ${Third_GLFW_ROOT}/include
+    # ${Third_GLFW_ROOT}/include
     ${LibGnutSrc}
     ${LibGREATSrc})
     

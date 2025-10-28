@@ -122,11 +122,11 @@ namespace gnut
         int nbytes = 0;
         _stop = 0;
         _running = 1;
-
         while (((nbytes = _gio_read(loc_buff, _size)) > 0) && _stop != 1)
         {
             // archive the stream
             _locf_write(loc_buff, nbytes);
+            SPDLOG_LOGGER_INFO(_spdlog, "[GIO] read: {}", loc_buff);
             // volatile int decoded = 0;
             if (_coder && nbytes > 0)
             {
@@ -143,7 +143,7 @@ namespace gnut
             else
             {
                 if (_spdlog)
-                    SPDLOG_LOGGER_DEBUG(_spdlog, "0 data decoded");
+                    SPDLOG_LOGGER_WARN(_spdlog, "0 data decoded");
             }
 
         }

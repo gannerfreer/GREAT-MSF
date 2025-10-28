@@ -187,8 +187,8 @@ int main(int argc, char** argv)
             tgio->run_read();
             lstepoch = t_gtime::current_time(t_gtime::GPS);
             // Write the information of reading process to log file
-            SPDLOG_LOGGER_INFO(my_logger, std::string("main:  ") + "READ: " + path + " time: "
-                + dbl2str(lstepoch.diff(runepoch)) + " sec");
+            SPDLOG_LOGGER_INFO(my_logger, "READ: " + path + " time: " + dbl2str(lstepoch.diff(runepoch)) + " sec | ID: " + id );
+
             // Delete 
             delete tgio;
             delete tgcoder;

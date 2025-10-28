@@ -141,7 +141,7 @@ int main(int argc, char** argv)
             SPDLOG_LOGGER_INFO(my_logger, "Error: unrecognized format " + int2str(int(ifmt)));
             gdata = 0;
         }
-
+        
         // Check the file path
         if (path.substr(0, 7) == "file://") 
         {
@@ -174,7 +174,7 @@ int main(int argc, char** argv)
             lstepoch = t_gtime::current_time(t_gtime::GPS);
 
             // Write the information of reading process to log file
-            SPDLOG_LOGGER_INFO(my_logger, "READ: " + path + " time: " + dbl2str(lstepoch.diff(runepoch)) + " sec");
+            SPDLOG_LOGGER_INFO(my_logger, "READ: " + path + " time: " + dbl2str(lstepoch.diff(runepoch)) + " sec | ID: " + id );
 
             // Delete 
             delete tgio;
